@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matcha — Lip balm, softly considered</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{--bg:#eef2e2;--bg2:#dfe8c8;--ink:#27311d;--soft:#5f6e4b;--sage:#8aa361;--deep:#46602d;--line:rgba(39,49,29,.18);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d2716;--bg2:#27341e;--ink:#e8f0d6;--soft:#a8bb8d;--sage:#a4c577;--deep:#c6df9f;--line:rgba(232,240,214,.18)}}
+:root[data-theme="dark"]{--bg:#1d2716;--bg2:#27341e;--ink:#e8f0d6;--soft:#a8bb8d;--sage:#a4c577;--deep:#c6df9f;--line:rgba(232,240,214,.18)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:300 17px/1.75 'Jost',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;letter-spacing:-.01em;line-height:1.05}
+a{color:inherit;text-decoration:none}:focus-visible{outline:2px solid var(--deep);outline-offset:4px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:26px 6vw;position:absolute;inset:0 0 auto;z-index:5}
+.logo{font-size:34px;font-style:italic;font-weight:400}
+nav div{display:flex;gap:34px;font-size:15px;align-items:center}
+nav a{position:relative}nav a::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .4s}nav a:hover::after{transform:scaleX(1)}
+#bag{border:1px solid var(--ink);border-radius:99px;padding:4px 16px;font-size:14px}#bag.bump{animation:bump .5s}
+@keyframes bump{40%{transform:scale(1.18)}}
+.page{display:none}.page.on{display:block;animation:pg .9s cubic-bezier(.2,.8,.2,1)}
+@keyframes pg{from{opacity:0;transform:translateY(24px)}}
+.hero{position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:130px 6vw 80px}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);background:var(--sage);opacity:.35;animation:drift 16s ease-in-out infinite alternate}
+.b1{width:520px;height:520px;right:-140px;top:-80px}.b2{width:420px;height:420px;left:-140px;bottom:-120px;background:var(--bg2);opacity:.9;animation-delay:-7s}
+@keyframes drift{to{transform:translate(-60px,50px) scale(1.15)}}
+.hero h1{font-size:clamp(56px,10.5vw,170px);position:relative}
+.ln{display:block;overflow:hidden;padding-bottom:.1em}.ln span{display:block;animation:up 1.2s cubic-bezier(.2,.8,.2,1) both}
+.ln:nth-child(2) span{animation-delay:.12s}.ln:nth-child(3) span{animation-delay:.24s}
+@keyframes up{from{transform:translateY(110%)}}
+.hero .sub{position:relative;max-width:520px;margin:34px 0 14px;color:var(--soft);font-size:19px;animation:fade 1.2s .7s both}
+.rotl{position:relative;font:italic 300 clamp(24px,3vw,38px)/1.3 'Cormorant Garamond',serif;margin-bottom:38px;animation:fade 1.2s .9s both}
+#rot{display:inline-block;color:var(--deep);transition:opacity .6s,transform .6s}#rot.out{opacity:0;transform:translateY(12px)}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+.cta{position:relative;display:flex;gap:16px;flex-wrap:wrap;animation:fade 1.2s 1.1s both}
+.btn{display:inline-block;border:1px solid var(--ink);padding:14px 36px;border-radius:99px;font-size:15px;letter-spacing:.04em;transition:background .35s,color .35s}
+.btn:hover,.btn.fill{background:var(--ink);color:var(--bg)}.btn.fill:hover{background:none;color:var(--ink)}
+.band{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0;font:italic 300 26px 'Cormorant Garamond',serif}
+.band div{display:inline-block;animation:slide 40s linear infinite}@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:120px 6vw}
+.chap{max-width:1150px;margin:auto;display:grid;grid-template-columns:.35fr 1fr;gap:5vw;padding:70px 0;border-top:1px solid var(--line)}
+.chap:first-child{border-top:0}
+.chap h3{font-size:34px;font-style:italic;font-weight:400}.chap h3 small{display:block;font:300 14px 'Jost',sans-serif;color:var(--soft);letter-spacing:.06em;margin-bottom:6px}
+.chap p{font:300 clamp(24px,3vw,40px)/1.35 'Cormorant Garamond',serif;max-width:30em}
+.quote{background:var(--bg2);text-align:center;padding:140px 8vw}
+.quote p{font:italic 300 clamp(34px,5.4vw,80px)/1.12 'Cormorant Garamond',serif;max-width:17em;margin:auto}
+.vals{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));padding:0}
+.vals div{padding:80px 5vw;border-right:1px solid var(--line)}.vals div:last-child{border:0}
+.vals h3{font-size:36px;font-style:italic;margin-bottom:12px}.vals p{color:var(--soft);max-width:30ch}
+.steps{max-width:1150px;margin:auto}.steps h2,.head h2{font-size:clamp(42px,6vw,88px)}
+.steps ol{list-style:none;padding:0;margin-top:50px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+.steps li{border-top:1px solid var(--ink);padding-top:18px}.steps li b{display:block;font:italic 400 32px 'Cormorant Garamond',serif;margin-bottom:6px}.steps li span{color:var(--soft);font-size:16px}
+.go{text-align:center;background:var(--bg2)}.go h2{font-size:clamp(40px,5.5vw,76px);margin-bottom:30px}
+.letter{text-align:center}.letter h2{font-size:clamp(38px,5vw,68px);margin-bottom:14px}.letter p{color:var(--soft);max-width:46ch;margin:0 auto 34px}
+.mail{display:inline-flex;border:1px solid var(--ink);border-radius:99px;padding:5px;max-width:100%}
+.mail input{border:0;background:none;color:var(--ink);padding:10px 20px;font:300 16px 'Jost',sans-serif;width:260px;max-width:58vw;outline:0}
+.mail button{border:0;background:var(--ink);color:var(--bg);border-radius:99px;padding:10px 26px;font:400 14px 'Jost',sans-serif;cursor:pointer}
+.shop{padding-top:150px}.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px;margin-bottom:60px}.head p{max-width:380px;color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:56px 26px}
+.card{text-align:center}
+.ph{position:relative;aspect-ratio:2/3;border-radius:22px;overflow:hidden;background:var(--c,var(--bg2))}
+.ph>img,.ph>svg.art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.ph>img.tint{mix-blend-mode:luminosity;object-position:50% 45%;filter:contrast(1.15) brightness(calc(var(--b) * 1.05))}
+.card:hover .ph>img,.card:hover .ph>svg.art{transform:scale(1.08)}
+.tube{position:absolute;left:50%;bottom:6%;height:80%;aspect-ratio:100/350;transform:translateX(-50%) rotate(-12deg);transition:transform .9s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 16px 14px rgba(0,0,0,.3));animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{translate:0 -9px}}
+.card:hover .tube{transform:translateX(-50%) rotate(0) scale(1.05)}
+.card h3{font-size:30px;margin:22px 0 2px;font-weight:400}.card small{display:block;color:var(--soft);font-size:14.5px;line-height:1.5;margin-bottom:16px;min-height:44px}
+.sizes{display:inline-flex;border:1px solid var(--line);border-radius:99px;margin-bottom:10px}
+.sizes button{border:0;background:none;color:var(--ink);padding:5px 18px;font:400 13px 'Jost',sans-serif;border-radius:99px;cursor:pointer;transition:.3s}.sizes button.on{background:var(--ink);color:var(--bg)}
+.price{font:400 26px 'Cormorant Garamond',serif;margin-bottom:10px}
+.add{border:0;border-bottom:1px solid var(--ink);background:none;color:var(--ink);font:400 14px 'Jost',sans-serif;letter-spacing:.06em;padding:4px 2px;cursor:pointer;transition:letter-spacing .4s}.add:hover{letter-spacing:.14em}
+footer{padding:70px 6vw 50px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;align-items:end;border-top:1px solid var(--line)}
+footer .logo{font-size:60px}footer p{color:var(--soft);font-size:15px;text-align:right}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140px);background:var(--ink);color:var(--bg);padding:12px 26px;border-radius:99px;font-size:15px;transition:transform .5s cubic-bezier(.2,.8,.2,1);z-index:9;max-width:90vw}.toast.show{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s,transform 1.1s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media (max-width:860px){.chap{grid-template-columns:1fr;gap:12px}nav div{gap:18px;font-size:14px}nav .hide{display:none}section{padding:80px 6vw}.vals div{border-right:0;border-bottom:1px solid var(--line)}footer p{text-align:left}}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="sh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".4" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".26"/></linearGradient></defs></svg>
+<nav><a class="logo" href="#/">matcha</a><div><a class="hide" href="#/story">Our story</a><a href="#/shop">Collection</a><span id="bag">Bag (0)</span></div></nav>
+
+<main class="page on" id="home">
+<header class="hero">
+<div class="blob b1"></div><div class="blob b2"></div>
+<h1><span class="ln"><span>The quiet</span></span><span class="ln"><span>colour of a</span></span><span class="ln"><span><i>good day.</i></span></span></h1>
+<p class="sub">Matcha is a lip balm house. One category, sixteen flavours, each made vegan and cruelty free, and gentle on every skin.</p>
+<p class="rotl">Every balm begins as a memory of <span id="rot">a morning coffee</span>.</p>
+<div class="cta"><a class="btn fill" href="#/shop">Explore the collection</a><a class="btn" href="#/story">Read our story</a></div>
+</header>
+<div class="band" aria-hidden="true"><div id="band"></div></div>
+<section id="story">
+<div class="chap rv"><h3><small>Chapter one</small>The idea</h3><p>It began with a small observation. Lip balm is the ritual we reach for most often, in bags, in pockets, in the quiet moments between things, and yet it is rarely designed with the care we give the rest of our routine.</p></div>
+<div class="chap rv"><h3><small>Chapter two</small>The flavours</h3><p>We chose to make one thing and give it our full attention. Each flavour starts as a memory, a morning coffee, a ripe banana, a bowl of summer cherries, and is translated patiently into a balm that feels soft, glossy and weightless.</p></div>
+<div class="chap rv"><h3><small>Chapter three</small>The promise</h3><p>Everything we make is vegan. Nothing is ever tested on animals. And because lips are as individual as the people who wear them, every formula is gentle enough for every skin, in every season.</p></div>
+</section>
+<div class="quote"><p class="rv">Small things, made with great care, are the ones people keep.</p></div>
+<section class="vals">
+<div class="rv"><h3>Vegan by design</h3><p>Plant-derived waxes and butters. No beeswax, no lanolin, no compromise on comfort.</p></div>
+<div class="rv"><h3>Never tested on animals</h3><p>Cruelty free at every stage, from the first formula to the finished tube.</p></div>
+<div class="rv"><h3>Made for every skin</h3><p>A gentle, lightly fragranced formula suited to all skin types and tones.</p></div>
+</section>
+<section><div class="steps"><h2 class="rv">From fruit to balm.</h2>
+<ol class="rv"><li><b>Choose</b><span>We begin with a single fruit, flower or flavour and ask how it should feel on the lips.</span></li><li><b>Infuse</b><span>Soft plant butters are gently infused so the flavour stays true and never sharp.</span></li><li><b>Whip</b><span>The blend is worked until it is smooth, glossy and light to wear.</span></li><li><b>Finish</b><span>Each balm is tinted, comfort tested, poured and sealed in its signature tube.</span></li></ol></div></section>
+<section class="go"><h2 class="rv">Meet the sixteen flavours.</h2><a class="btn fill rv" href="#/shop">Explore the collection</a></section>
+<section class="letter"><h2 class="rv">Join the Matcha letter.</h2><p class="rv">New flavours, early access and the occasional story from behind the tube. Written rarely, read happily.</p>
+<div class="mail rv"><input id="em" type="email" placeholder="Your email address" aria-label="Email address"><button id="jn">Join the list</button></div></section>
+</main>
+
+<main class="page" id="shop">
+<section class="shop"><div class="head"><h2 class="rv">The collection</h2><p class="rv">Sixteen flavours in one signature tube, in two sizes. Small is ₹499 and big is ₹799.</p></div>
+<div class="grid" id="grid"></div></section>
+</main>
+<footer><div class="logo">matcha</div><p>Vegan. Cruelty free. For every skin.<br>© Matcha</p></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+var IM="output.jpg";
+var F=[["Ceremonial Matcha","Stone-ground green tea, cool and creamy","#8aa361",.95],["Dark Cocoa Espresso","Roasted coffee folded into cocoa butter","#6b4330",.6],["Banana Brûlée","Caramelised banana, warm and soft","#e0b24c",1],["Cerise Jam","Cherry and raspberry, glossy and bright","#c2243f",.7],["Sunday Watermelon","Juicy, chilled and delicately sweet","#f0728a",1],["Honey Lemon Cream","Wild honey with a bright squeeze of lemon","#f3d94f",1],["Vanilla Bean Cloud","Whipped vanilla, light as cream","#f0e2b6",1],["Vintage Cola","Fizzy cola with a caramel finish","#7a3326",.62],["Kiwi Sorbet","Bright, green and softly tart","#9bc53d",.95],["Golden Alphonso","Sun-ripened Indian mango","#f7b64a",1],["Strawberry Milk","Strawberries and fresh cream","#f08aa0",1],["Peach Bellini","Soft peach with a sparkling finish","#fbc09b",1],["Blueberry Dusk","Wild blueberry, deep and velvety","#7b84c9",.85],["Coco Cream","Creamy coconut milk","#efe9db",1.05],["Lychee Petal","Rose-kissed lychee","#f6d3d6",1.05],["Concord Grape","Sweet purple grape","#8a5fb0",.8]];
+var bs='',k;for(k=0;k<12;k++)bs+='vegan  ✿  cruelty free  ✿  for every skin  ✿  ';document.getElementById('band').textContent=bs;
+var g=document.getElementById('grid'),t=document.getElementById('toast'),bc=document.getElementById('bag'),bag=0,tm;
+function say(m){t.textContent=m;t.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('show')},2200)}
+F.forEach(function(f,i){var c=document.createElement('div');c.className='card rv';c.style.transitionDelay=(i%4)*90+'ms';var sz=499,ph;
+ph='<div class="ph" style="--c:'+f[2]+';--b:'+f[3]+'"><img class="tint" alt="'+f[0]+' lip balm" src="'+IM+'"></div>';
+c.innerHTML=ph+'<h3>'+f[0]+'</h3><small>'+f[1]+'</small><div class="sizes"><button class="on">Small</button><button>Big</button></div><div class="price">₹499</div><button class="add">Add to bag</button>';
+var sb=c.querySelectorAll('.sizes button'),pr=c.querySelector('.price');
+sb.forEach(function(s,j){s.onclick=function(){sb.forEach(function(x){x.classList.remove('on')});s.classList.add('on');sz=j?799:499;pr.textContent='₹'+sz}});
+c.querySelector('.add').onclick=function(){bag++;bc.textContent='Bag ('+bag+')';bc.classList.remove('bump');void bc.offsetWidth;bc.classList.add('bump');say(f[0]+' ('+(sz==499?'small':'big')+') added to your bag')};
+g.appendChild(c)});
+document.getElementById('jn').onclick=function(){var e=document.getElementById('em');if(/^\S+@\S+\.\S+$/.test(e.value)){say('Thank you. We will be in touch soon.');e.value=''}else say('Please enter a valid email address.')};
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var W=["a morning coffee","a ripe banana","a bowl of summer cherries","a chilled slice of watermelon","a spoonful of honey and lemon","a quiet cup of matcha"],wi=0,rot=document.getElementById('rot');
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)setInterval(function(){rot.classList.add('out');setTimeout(function(){wi=(wi+1)%W.length;rot.textContent=W[wi];rot.classList.remove('out')},600)},3200);
+function route(){var h=location.hash,s=h=='#/shop';document.getElementById('home').classList.toggle('on',!s);document.getElementById('shop').classList.toggle('on',s);
+if(h=='#/story'){setTimeout(function(){document.getElementById('story').scrollIntoView({behavior:'smooth'})},60)}else scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
